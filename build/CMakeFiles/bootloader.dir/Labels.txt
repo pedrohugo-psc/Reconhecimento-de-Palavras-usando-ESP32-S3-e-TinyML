@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/CMakeFiles/bootloader
+/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/CMakeFiles/bootloader.rule
+/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/CMakeFiles/bootloader-complete.rule
+/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
