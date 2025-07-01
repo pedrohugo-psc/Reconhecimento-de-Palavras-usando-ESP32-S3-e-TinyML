@@ -1,32 +1,77 @@
-# _Sample project_
+# Sistema Embarcado para Reconhecimento de Palavras usando ESP32-S3 e TinyML
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+## 📝 Descrição do Trabalho  
+Este projeto implementa um sistema embarcado **offline** para detecção de palavras-chave em português utilizando técnicas de **TinyML**. O firmware reconhece comandos de voz capturados por um microfone e controla um LED RGB integrado ao ESP32-S3 sem dependência de nuvem, garantindo:  
+- ⚡ **Baixa latência** (resposta em tempo real)  
+- 🔋 **Eficiência energética**  
+- 🔒 **Privacidade** (processamento 100% local)  
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+O modelo de ML foi treinado e otimizado na plataforma Edge Impulse, quantizado para eficiência e embarcado no microcontrolador. Validações confirmaram desempenho satisfatório em hardware com recursos limitados.
 
+---
 
+## 🧩 Hardware  
+| Componente       | Especificações/Modelo | Função                          |
+|------------------|------------------------|---------------------------------|
+| **Microcontrolador** | ESP32-S3              | Execução do modelo TinyML e controle geral |
+| **Microfone**    | INMP441                | Captura de áudio (16-bit/16 kHz) |
+| **LED**          | RGB interno (ESP32-S3) | Feedback visual dos comandos |
 
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
+---
 
-## Example folder contents
+## ⚙️ Funcionalidades  
+| Comando de Voz | Ação no LED RGB              | 
+|----------------|------------------------------|
+| `"zero"`       | Desliga o LED                | 
+| `"um"`         | Acende o LED (branco fixo)   | 
+| `"dois"`       | Muda para cor aleatória      | 
+| `"três"`       | Inicia efeito de piscar      |
 
-The project **sample_project** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
+---
 
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
-files that provide set of directives and instructions describing the project's source files and targets
-(executable, library, or both). 
+## 🔌 Conexões  
+| Pino INMP441 | Pino ESP32-S3 | Função               | 
+|--------------|---------------|----------------------|
+| **VDD**      | 3.3V          | Alimentação          | 
+| **GND**      | GND           | Terra                | 
+| **L/R**      | GND           | Canal esquerdo       | 
+| **SD**       | GPIO 10       | Dados (`DATA_PIN`)   | 
+| **SCK**      | GPIO 12       | Clock (`SCK_PIN`)    | 
+| **WS**       | GPIO 11       | Word Select (`WS_PIN`) |  
 
-Below is short explanation of remaining files in the project folder.
+> **Importante:**  
+> - Alimente o INMP441 com **3.3V** (5V danifica o componente)  
+> - Conexões definidas no código:  
+>   ```c
+>   #define DATA_PIN 10
+>   #define SCK_PIN 12
+>   #define WS_PIN 11
+>   ```
 
-```
-├── CMakeLists.txt
-├── main
-│   ├── CMakeLists.txt
-│   └── main.c
-└── README.md                  This is the file you are currently reading
-```
-Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
-They are not used or needed when building with CMake and idf.py.
+---
+
+## ⚡ Fluxo do Sistema  
+1. **Captura de Áudio**  
+   - Microfone INMP441 coleta áudio bruto via interface I²S
+   
+2. **Pré-processamento**  
+   - Framework AFE aplica filtros (cancelamento de eco, supressão de ruído)
+
+3. **Buffer Circular**  
+   - Armazena 16.000 amostras (1 segundo de áudio @16kHz)
+
+4. **Inferência TinyML**  
+   - Modelo embarcado classifica em tempo real:
+     - `"zero"`, `"um"`, `"dois"`, `"três"`, `"desconhecido"`, `"ruído"`
+
+5. **Controle do LED**  
+   - Aciona ações conforme comando detectado (acurácia > 85%)
+
+---
+
+## 📦 Dependências  
+- [ESP-IDF](https://docs.espressif.com/projects/esp-idf/) (v5.1+)  
+- Biblioteca [Edge Impulse](https://edgeimpulse.com/)  
+- Driver [esp-sr](https://github.com/espressif/esp-sr) (Audio Front-End)
+
+---
