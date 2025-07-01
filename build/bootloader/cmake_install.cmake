@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/bootloader/esp-idf/cmake_install.cmake")
+  include("/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Reconhecimento_de_Palavras_Chaves_ESP32S3_TinyML/build/bootloader/esp-idf/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -57,6 +57,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/bootloader/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Reconhecimento_de_Palavras_Chaves_ESP32S3_TinyML/build/bootloader/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice
+# Install script for directory: /mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Reconhecimento_de_Palavras_Chaves_ESP32S3_TinyML
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/esp-idf/cmake_install.cmake")
+  include("/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Reconhecimento_de_Palavras_Chaves_ESP32S3_TinyML/build/esp-idf/cmake_install.cmake")
 
 endif()
 
@@ -58,6 +58,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Reconhecimento_de_Palavras_Chaves_ESP32S3_TinyML/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

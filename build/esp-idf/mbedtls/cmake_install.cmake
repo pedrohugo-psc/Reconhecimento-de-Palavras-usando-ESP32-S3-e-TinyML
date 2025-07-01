@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/esp-idf/mbedtls/mbedtls/cmake_install.cmake")
+  include("/mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Reconhecimento_de_Palavras_Chaves_ESP32S3_TinyML/build/esp-idf/mbedtls/mbedtls/cmake_install.cmake")
 endif()
 

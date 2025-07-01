@@ -17,4 +17,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file /mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Command_Voice_TCC/Command_Voice/build/bootloader/bootloader.elf
+file /mnt/Storage/Documentos/Documentos/UFBA/Trabalho_de_Conclusao_de_Curso/Reconhecimento_de_Palavras_Chaves_ESP32S3_TinyML/build/bootloader/bootloader.elf

@@ -1,6 +1,6 @@
-set(CMAKE_HOST_SYSTEM "Linux-6.11.0-24-generic")
+set(CMAKE_HOST_SYSTEM "Linux-6.11.0-28-generic")
 set(CMAKE_HOST_SYSTEM_NAME "Linux")
-set(CMAKE_HOST_SYSTEM_VERSION "6.11.0-24-generic")
+set(CMAKE_HOST_SYSTEM_VERSION "6.11.0-28-generic")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
 include("/home/pedro-hugo/esp/v5.4.1/esp-idf/tools/cmake/toolchain-esp32s3.cmake")

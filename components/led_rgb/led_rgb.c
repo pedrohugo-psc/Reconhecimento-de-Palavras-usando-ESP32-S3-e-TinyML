@@ -27,6 +27,15 @@ static void led_rgb_init_colors()
     blue = 16;
 }
 
+static void led_rgb_check_blink_handle()
+{
+    if (led_blink_handle != NULL)
+    {
+        vTaskDelete(led_blink_handle);
+        led_blink_handle = NULL;
+    }
+}
+
 void led_rgb_setup()
 {
 
@@ -109,47 +118,32 @@ void led_rgb_command(const char *command, float value_detection)
     }
     
 
-    if ((strcmp(command, "zero") == 0) && (value_detection >= 0.85))
+    if ((strcmp(command, "zero") == 0) && (value_detection > 0.85))
     {
+        led_rgb_check_blink_handle();
+
         ESP_LOGI(TAG, "Command 0: Turn off LED");
-
-        if (led_blink_handle != NULL)
-        {
-            vTaskDelete(led_blink_handle);
-            led_blink_handle = NULL;
-        }
-
         s_led_state = 0;
         led_rgb_turn_off();
     }
     else if ((strcmp(command, "um") == 0) && (value_detection > 0.85))
     {
+        led_rgb_check_blink_handle();
 
         ESP_LOGI(TAG, "Command 1: Turn on LED");
-
-        if (led_blink_handle != NULL)
-        {
-            vTaskDelete(led_blink_handle);
-            led_blink_handle = NULL;
-        }
-
         s_led_state = 1;
         led_rgb_turn_on();
     }
     else if ((strcmp(command, "dois") == 0) && (value_detection > 0.85))
     {
+        led_rgb_check_blink_handle();
+
         ESP_LOGI(TAG, "Command 2: Change color LED");
-
-        if (led_blink_handle != NULL)
-        {
-            vTaskDelete(led_blink_handle);
-            led_blink_handle = NULL;
-        }
-
         led_rgb_change_color();
     }
     else if ((strcmp(command, "tres") == 0) && (value_detection > 0.85))
     {
+        led_rgb_check_blink_handle();
 
         ESP_LOGI(TAG, "Command 3: Blink LED");
         led_rgb_blink();
