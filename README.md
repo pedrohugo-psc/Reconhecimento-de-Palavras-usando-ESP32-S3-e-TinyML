@@ -23,7 +23,7 @@ O modelo de ML foi treinado e otimizado na plataforma Edge Impulse, quantizado p
 | Comando de Voz | Ação no LED RGB              | 
 |----------------|------------------------------|
 | `"zero"`       | Desliga o LED                | 
-| `"um"`         | Acende o LED (branco fixo)   | 
+| `"um"`         | Acende o LED                 | 
 | `"dois"`       | Muda para cor aleatória      | 
 | `"três"`       | Inicia efeito de piscar      |
 
@@ -41,12 +41,6 @@ O modelo de ML foi treinado e otimizado na plataforma Edge Impulse, quantizado p
 
 > **Importante:**  
 > - Alimente o INMP441 com **3.3V** (5V danifica o componente)  
-> - Conexões definidas no código:  
->   ```c
->   #define DATA_PIN 10
->   #define SCK_PIN 12
->   #define WS_PIN 11
->   ```
 
 ---
 
@@ -66,12 +60,3 @@ O modelo de ML foi treinado e otimizado na plataforma Edge Impulse, quantizado p
 
 5. **Controle do LED**  
    - Aciona ações conforme comando detectado (acurácia > 85%)
-
----
-
-## 📦 Dependências  
-- [ESP-IDF](https://docs.espressif.com/projects/esp-idf/) (v5.1+)  
-- Biblioteca [Edge Impulse](https://edgeimpulse.com/)  
-- Driver [esp-sr](https://github.com/espressif/esp-sr) (Audio Front-End)
-
----
